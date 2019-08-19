@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-primary">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link" href="/">Home Page.</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <% for(var i=0;i<item.length;i++){ %>
+                <div class="col-12 col-lg-3 col-md-4 col-sm-6 mb-3 p-2">
+                    <div class="card">
+                        <img class="rounded mx-auto d-block mt-3" src="<%= item[i].image %>" width="32%" height="225" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item[i].name %></h5>
+                            <p class="card-text"><strong>Price: </strong><%= item[i].price %></p>
+                            <a href="/itemsingle/<%= i %>" class="btn btn-primary">Full View.</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+
+</body>
+</html>
